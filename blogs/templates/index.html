@@ -1,0 +1,31 @@
+<h3>All Blogs</h3>
+
+{% for blog in blogs %}
+<section>
+  <div class="container">
+    <h6>{{ blog.blog.title }}</h6>
+
+    {% if blog.summaries.count != 0 %}
+    <p>Summaries</p>
+
+    <ul>
+      {% for summary in blog.summaries %}
+      <li>{{ summary.details }}</li>
+      {% endfor %}
+    </ul>
+    
+    {% endif %}
+
+    {% if blog.sections.count != 0 %}
+    <p>Sections</p>
+
+    <ul>
+      {% for section in blog.section %}
+      <li>{{ section.sub_title }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </div>
+</section>
+<hr />
+{% endfor %}
